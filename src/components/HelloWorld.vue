@@ -5,8 +5,8 @@
 </template>
 
 <script>
-// import rust from '#/hello-wasm/pkg/hello_wasm.js';
-const rust = import('#/hello-wasm/pkg');
+import init, { greet } from '#/hello-wasm/pkg';
+// const init,  rust } = import('#/hello-wasm/pkg');
 
 export default {
   name: 'HelloWorld',
@@ -14,11 +14,13 @@ export default {
     msg: String
   },
   mounted () {
+	init();
 	setTimeout(() => {
-		console.log(rust);
+		greet('Word!');
+		/* console.log(rust);
 		rust
 			.then(m => m.greet('World!'))
-			.catch(console.error);
+			.catch(console.error); */
 	}, 500);
   }
 }
