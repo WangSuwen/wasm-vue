@@ -1,4 +1,26 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+// const { defineConfig } = require('@vue/cli-service')
+const path = require('path');
+const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
+function resolve (dir) {
+	return path.join(__dirname, dir);
+}
+
+module.exports = {
+	transpileDependencies: true,
+	configureWebpack: {
+		resolve: {
+			alias: {
+				'@': resolve('src'),
+				'#': resolve('/')
+			}
+		},
+		plugins: [
+			new WasmPackPlugin({
+				crateDirectory: path.resolve(__dirname, ".")
+			})
+		],
+		experiments: {
+			asyncWebAssembly: true
+		}
+	},
+};
