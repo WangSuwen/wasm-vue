@@ -6,6 +6,21 @@ function resolve (dir) {
 
 module.exports = {
 	transpileDependencies: true,
+	devServer: {
+		/* client: {
+			errors: false,
+			warnings: false
+		} */
+		port: 9000,
+		client: {
+			overlay: false // 不在页面上展示 错误提示浮层
+			// 或者下面这样详细的配置
+			/* overlay: {
+				errors: true,
+				warnings: false,
+			} */
+		}
+	},
 	configureWebpack: {
 		resolve: {
 			alias: {
