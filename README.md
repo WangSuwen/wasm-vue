@@ -1,14 +1,11 @@
 # wasm-vue
+> vue + Rust WebAssembly 实践
 
 ## Project setup
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
 
 ### Compiles and minifies for production
 ```
@@ -136,3 +133,10 @@ module.exports = {
 };
 
 ```
+## 5、启动项目
+```
+yarn serve
+```
+
+webpack 的依赖包，如果配置上这个，会在rust 代码热部署时产生异常，会导致 hello-wasm/pkg/package.json 中的 files 和 modules 与项目启动时的不一致，不知道怎么解决
+// "@wasm-tool/wasm-pack-plugin": "1.0.1",

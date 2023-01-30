@@ -6,7 +6,6 @@
 
 <script>
 import init, { greet } from '#/hello-wasm/pkg';
-// const init,  rust } = import('#/hello-wasm/pkg');
 
 export default {
   name: 'HelloWorld',
@@ -15,12 +14,9 @@ export default {
   },
   mounted () {
 	init();
+	// TODO: 这里用 timeout 是因为wasm 包加载顺序的问题，这个不知道怎么处理
 	setTimeout(() => {
 		greet('Word!');
-		/* console.log(rust);
-		rust
-			.then(m => m.greet('World!'))
-			.catch(console.error); */
 	}, 500);
   }
 }

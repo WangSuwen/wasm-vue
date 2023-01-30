@@ -1,6 +1,5 @@
-// const { defineConfig } = require('@vue/cli-service')
 const path = require('path');
-const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
+// const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 function resolve (dir) {
 	return path.join(__dirname, dir);
 }
@@ -15,9 +14,9 @@ module.exports = {
 			}
 		},
 		plugins: [
-			new WasmPackPlugin({
-				crateDirectory: path.resolve(__dirname, ".")
-			})
+			/* new WasmPackPlugin({
+				crateDirectory: path.resolve(__dirname, "./hello-wasm/pkg")
+			}) */
 		],
 		experiments: {
 			asyncWebAssembly: true

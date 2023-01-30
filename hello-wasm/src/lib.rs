@@ -9,5 +9,5 @@ extern {
 
 #[wasm_bindgen]
 pub fn greet(name: &str) {
-    alert(&format!("Hello, (*´▽｀)ノノ {}!", name));
+    alert(&format!("你好呀, 我是WebAssembly ++--===--++ {}!", name));
 }

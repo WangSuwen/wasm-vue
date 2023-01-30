@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "rsw watch & vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "rsw build & vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -17,7 +17,6 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "@wasm-tool/wasm-pack-plugin": "1.0.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "vue-template-compiler": "^2.6.14"
